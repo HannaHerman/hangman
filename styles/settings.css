@@ -1,0 +1,28 @@
+body {
+  overflow-x: hidden;
+}
+.container {
+  background-image: url("../media/sheet_bg.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  overflow-x: hidden;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+@font-face {
+  font-family: "Gloria";
+  src: url("../fonts/GloriaHallelujah-Regular.ttf"); 
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu.ttf"); 
+}
+@font-face {
+  font-family: "Vollkorn";
+  src: url("../fonts/Vollkorn-Regular.ttf"); 
+}
+*:focus {
+  outline: none;
+}

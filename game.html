@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman</title>
+  <link href="styles/settings.css" rel="stylesheet" type="text/css"/>
+  <link href="styles/game.css" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
+</head>
+<body>
+  <div class="container">
+    <div class="block-layer">
+      <div class="players-number" >
+        <button onmousedown="soundOnClick()"  class="players-number__button-one" value="1">1 игрок</button>
+        <button onmousedown="soundOnClick()" class="players-number__button-two" value="2">2 игрока</button>
+        <a onmousedown="soundOnClick()" class="players-number__close" href="index.html"></a>
+      </div>
+    </div>
+    <div class="word-block-layer">
+      <div class="word-request">
+        <label> Введите слово
+          <input class="word-input" type="text">
+        </label>
+        <input class="word-read" onmousedown="soundOnClick()" type="button" value="Играть!">
+        <span class="word-input-error"></span>
+        <button onmousedown="soundOnClick()" onclick="window.location.reload()" class="word-request-close"></button>
+      </div>
+    </div>
+    <div class="game-container">
+      <svg class="hangman-image" width="400" height="400" viewBox="0 0 400 450"xmlns="http://www.w3.org/2000/svg">
+      </svg>
+      <div class="game-timer">
+        <form name=clockForm>
+          <input class="game-timer-board" name=stopwatch size=10 value="00:00:00" disabled>
+        </form>
+        <div class="game-clock">
+          <div class="clock"></div>
+          <div class="clock"></div>
+        </div>
+      </div>
+      <div class="hangman-game">
+        <div class="letters-lines"></div>
+        <div class="letters-container">
+          <label> Введите букву
+            <input class="letters-input" type="text" maxlength="1">
+          </label>
+          <input class="letters-read" onmousedown="soundOnClick()" type="button" value="Проверить">
+          <span class="letters-input-error"></span>
+        </div>
+        <div>
+          <p class="used-letters">Буквы, которые уже были введены:</p>
+          <p class="absent-letters"></p>
+        </div>
+      </div>
+    </div>
+    <div class="new-record-block-layer">
+      <div class="new-record-block">
+        <p>Вы побили чей-то рекорд! Хотите сохранить результат?</p>
+        <div class="record-name-enter">
+          <label>Введите своё имя:<input class="record-name-input" type="text"></label>
+          <button onmousedown="soundOnClick()" class="record-name-submit">Сохранить</button>
+        </div>
+        <button onmousedown="soundOnClick()" class="new-record-block-close"></button>
+      </div>
+    </div>
+    <div class="end-block-layer">
+      <div class="game-end">
+        <div class="game-end-word">
+          <p>Слово:</p>
+          <p class="result-word"></p>
+        </div>
+        <p class="result-game"></p>
+        <div class="game-end-controllers">
+          <button onmousedown="soundOnClick()" onclick="window.location.reload()" class="game-end-controllers-restart">Играть заново</button>
+          <form action="index.html">
+            <button onmousedown="soundOnClick()" class="game-end-controllers-back">Вернуться на главную</button>
+          </form>
+        </div>
+        <a onmousedown="soundOnClick()" class="game-end-close" href="index.html"></a>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/jquery-3.5.1.min.js"></script>
+  <script src="scripts/records.js"></script>
+  <script src="scripts/timer.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/sound.js"></script>
+</body>
+</html>
